@@ -1,17 +1,20 @@
-import { Container, GlobalStyles } from './GlobalStyles';
+import { Container, defaultTheme, GlobalStyles } from './GlobalStyles';
 import { TodoListProvider } from './contexts/TodoListContext';
 import Header from './components/Header/Header';
 import TodoList from './components/TodoList/TodoList';
+import { ThemeProvider } from 'styled-components';
 
 const App = () => {
   return (
-    <Container>
-      <GlobalStyles />
-      <TodoListProvider>
-        <Header />
-        <TodoList />
-      </TodoListProvider>
-    </Container>
+    <ThemeProvider theme={defaultTheme}>
+      <Container>
+        <GlobalStyles />
+        <TodoListProvider>
+          <Header />
+          <TodoList />
+        </TodoListProvider>
+      </Container>
+    </ThemeProvider>
   );
 };
 

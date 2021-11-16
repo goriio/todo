@@ -4,19 +4,23 @@ export const StyledAddTodo = styled.form`
   input {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #aaa;
+    border: 1px solid ${({ theme }) => theme.secondary};
     border-radius: 4px;
     outline: 0;
     font-size: 1rem;
 
+    &:placeholder {
+      color: ${({ theme }) => theme.secondary};
+    }
+
     &:focus {
-      border-color: blue;
+      border-color: ${({ theme }) => theme.primary};
     }
   }
 
   small {
     display: block;
     height: 1.5rem;
-    color: red;
+    color: ${({ theme }) => theme.warning};
   }
 `;

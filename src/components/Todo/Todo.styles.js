@@ -7,7 +7,7 @@ export const StyledTodo = styled.li`
 
   p {
     text-decoration: ${({ todo }) => todo.completed && 'line-through'};
-    color: ${({ todo }) => todo.completed && '#555'};
+    color: ${({ todo, theme }) => todo.completed && theme.secondary};
   }
 
   button {
