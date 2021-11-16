@@ -8,6 +8,14 @@ export const defaultTheme = {
   warning: 'hsl(0, 79%, 44%)',
 };
 
+export const darkTheme = {
+  primary: 'hsl(220, 79%, 44%)',
+  secondary: 'hsl(0, 0%, 64%)',
+  background: 'hsl(0, 0%, 12%)',
+  text: 'hsl(0, 0%, 100%)',
+  warning: 'hsl(0, 79%, 44%)',
+};
+
 export const GlobalStyles = createGlobalStyle`
   *,
   *::before,
@@ -21,6 +29,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.text};
+    transition: all 200ms ease;
   }
 
   ul {

@@ -7,7 +7,9 @@ export const StyledAddTodo = styled.form`
     border: 1px solid ${({ theme }) => theme.secondary};
     border-radius: 4px;
     outline: 0;
+    background: transparent;
     font-size: 1rem;
+    color: ${({ theme }) => theme.text};
 
     &:placeholder {
       color: ${({ theme }) => theme.secondary};
