@@ -8,10 +8,15 @@ import { TodoListProvider } from './contexts/TodoListContext';
 import Header from './components/Header/Header';
 import TodoList from './components/TodoList/TodoList';
 import { ThemeProvider } from 'styled-components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const App = () => {
   const [theme, setTheme] = useState('default');
+
+  useEffect(() => {
+    const themeData = localStorage.getItem('theme') || theme;
+    setTheme(themeData);
+  }, [theme]);
 
   return (
     <ThemeProvider theme={theme === 'default' ? defaultTheme : darkTheme}>
