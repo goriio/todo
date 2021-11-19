@@ -12,8 +12,4 @@
 - ReactJS
 - styled-components
 
-**Installation**
-
-- Run `npm install` to install dependencies.
-
-- Then run `npm start`.
+Run `npm install` to install dependencies. Then run `npm start`.
