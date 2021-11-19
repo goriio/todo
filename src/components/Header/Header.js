@@ -1,4 +1,5 @@
 import AddTodo from '../AddTodo/AddTodo';
+import TodoCount from '../TodoCount/TodoCount';
 import { StyledHeader, Sun, Moon, ThemeToggler } from './Header.styles';
 
 const Header = ({ theme, setTheme }) => {
@@ -24,6 +25,7 @@ const Header = ({ theme, setTheme }) => {
         </ThemeToggler>
       </div>
       <AddTodo />
+      <TodoCount />
     </StyledHeader>
   );
 };

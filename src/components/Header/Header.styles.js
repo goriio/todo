@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { BsSun, BsMoon } from 'react-icons/bs';
 
 export const StyledHeader = styled.header`
+  margin-bottom: 1rem;
+
   div {
     display: flex;
     align-items: center;
