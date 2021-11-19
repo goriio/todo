@@ -8,9 +8,10 @@ const TodoCount = () => {
 
   useEffect(() => {
     const newTodoListUncomplete = todoList.filter((todo) => !todo.completed);
-
     setTodoListUncomplete(newTodoListUncomplete);
-  }, [todoList]);
+
+    document.title = `(${todoListUncomplete.length}) To-do List`;
+  }, [todoList, todoListUncomplete.length]);
 
   return <StyledTodoCount>{todoListUncomplete.length}</StyledTodoCount>;
 };
