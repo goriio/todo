@@ -1,11 +1,22 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { TodoListContext } from '../../contexts/TodoListContext';
-import { StyledAddTodo } from './AddTodo.styles';
+import { FormControl, InputCount, StyledAddTodo } from './AddTodo.styles';
+
+const TODO_MAX_LENGTH = 25;
 
 const AddTodo = () => {
   const { todoList, setTodoList } = useContext(TodoListContext);
   const [todo, setTodo] = useState('');
+  const [todoLength, setTodoLength] = useState(TODO_MAX_LENGTH);
   const [validationMessage, setValidationMessage] = useState('');
+
+  useEffect(() => {
+    setTodoLength(TODO_MAX_LENGTH - todo.length);
+  }, [todo.length]);
+
+  const onChange = (event) => {
+    setTodo(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,14 +40,16 @@ const AddTodo = () => {
 
   return (
     <StyledAddTodo onSubmit={handleSubmit}>
-      <div>
+      <FormControl>
         <input
           type='text'
           value={todo}
-          onChange={(event) => setTodo(event.target.value)}
+          onChange={onChange}
+          maxLength={TODO_MAX_LENGTH}
           placeholder='What to do today?'
         />
-      </div>
+        <InputCount todoLength={todoLength}>{todoLength}</InputCount>
+      </FormControl>
       <small>{validationMessage}</small>
     </StyledAddTodo>
   );

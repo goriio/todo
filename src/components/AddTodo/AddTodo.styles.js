@@ -26,3 +26,15 @@ export const StyledAddTodo = styled.form`
     color: ${({ theme }) => theme.warning};
   }
 `;
+
+export const FormControl = styled.div`
+  position: relative;
+`;
+
+export const InputCount = styled.span`
+  position: absolute;
+  right: 1rem;
+  font-size: 0.9rem;
+  color: ${({ theme, todoLength }) =>
+    todoLength > 3 ? theme.secondary : theme.warning};
+`;
