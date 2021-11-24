@@ -3,6 +3,7 @@
 🗒 The usual to-do list web app.
 
 ## Run this on your local machine
+
 **Requirements**
 
 - **NodeJS**
@@ -12,4 +13,4 @@
 - ReactJS
 - styled-components
 
-Run `npm install` to install dependencies. Then run `npm start`.
+Clone this repository. Run `npm install` to install dependencies. Then run `npm start`.
