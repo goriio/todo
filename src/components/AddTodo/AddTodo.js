@@ -21,7 +21,7 @@ const AddTodo = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (todo === '') {
+    if (todo.trim() === '') {
       return setValidationMessage('Input is required');
     }
 
