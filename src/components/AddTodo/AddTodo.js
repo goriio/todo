@@ -25,6 +25,8 @@ const AddTodo = () => {
       return setValidationMessage('Input is required');
     }
 
+    if (todo.length > TODO_MAX_LENGTH) return;
+
     const newTodo = {
       id: Date.now(),
       name: todo,
